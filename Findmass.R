@@ -17,4 +17,4 @@ Masshigh <- Mass+ppm20
 time1 <- subset(file1_read,file1_read$Retention.time <= Time+4 & file1_read$Retention.time >= Time-4)
 mass1 <- subset(time1,time1$Mass <= Masshigh & time1$Mass >= Masslow)
 savename <- sapply(strsplit(file1,"\\."), `[`, 1)
-write.table(mass1, paste(savename,"-1283.621_31.2.csv") , sep=",", row.names=TRUE, col.names=TRUE)
+write.table(mass1, paste(savename,"-",Mass,"_",Time,".csv",sep="") , sep=",", row.names=TRUE, col.names=TRUE)
